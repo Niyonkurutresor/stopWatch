@@ -26,6 +26,9 @@ var arlam = prompt("enter your wake time like \"00 : 00 : 04\"");
 
 
 
+// music to plat 
+let sounds = new Audio("Legends Never Die.mp3")
+
 // funciton to orange  seconds into minutes 
 // and minuts into second
 
@@ -79,7 +82,6 @@ function stopWatch() {
 
  
 if(displayTimer.innerText == arlam){
-       let sounds = new Audio("Legends Never Die.mp3")
         sounds.play();
     setTimeout(function(){
         sounds.pause();
@@ -106,6 +108,7 @@ startStop.addEventListener("click",function(){
         window.clearInterval(timerInterval);
         startStop.innerText ="resume";
         timerStatus = "stopped";
+        sounds.pause();  
     }
 })
 
@@ -119,9 +122,8 @@ reset.addEventListener("click",function(){
     seconds = 0;
     minutes = 0;
     hours = 0;
+    sounds.pause();
 })
-
-
 
 
 
